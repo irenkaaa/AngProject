@@ -1,0 +1,141 @@
+
+
+header {
+    display: flex;
+    border-bottom: 1px solid  #999;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+}
+
+
+
+header img.lead-picture {
+
+    width: 15rem;
+    height: 15rem;
+}
+
+header .title {
+    align-self: center;
+    font-size: 3em;
+}
+
+
+ul {
+    display: flex;
+    align-items: center;
+}
+
+  
+  ul>li,
+  button {
+    display: block;
+    list-style: none outside;
+    padding: 0 0.5em;
+  }
+
+  .notlogged,
+  .inside {
+    display: flex;
+  }
+
+  .notlogged li,
+  .inside li {
+      list-style: none outside;
+      padding: 0 0.5em;
+  }
+
+span {
+    padding-right: 0.5em;
+}
+  
+
+.btn.btn-dark {
+    padding: 0.3em 0.5em;
+    background-color: teal;
+}
+
+.btn.btn-dark:hover {
+   background-color: tomato;
+}
+  
+  
+  li > a:hover {
+      background: darkblue;
+      color: wheat;
+  }
+  
+  
+  
+  a {
+      display: block;
+      padding: 0.5em 1em;
+      border-radius: 0.3em;
+      background: wheat;
+  }
+  
+
+/*
+
+.site {
+    &-header{
+        border-bottom: 1px solid var(--color-border-default, #999);
+        margin-bottom: var(--spacing-layout-elements);
+        padding-bottom: calc( var(--spacing-layout-elements) / 2);
+    }
+    
+    &-title {
+        padding: 0;
+        margin: 0;
+        font-size: 2em;
+
+        a {
+            display: block;
+            padding: 0;
+        }
+    }
+
+    @include bp (mobile) {
+        &-nav {
+            display: none;
+        }
+
+        & > ul {
+            display: flex;
+            flex-direction: column;
+
+            & > li {
+                padding: 0.5em; 
+            }
+        }
+    }
+}
+
+.nav-toggle {
+    @include bp (mobile) {
+        &-button {
+            display: block;
+            .close {
+                display: none;
+            }
+        
+        }
+
+        &:checked {
+            & + .site-header .site-nav{
+                display: block;
+                flex: 1 0 100%;
+                padding-top: 1em;
+            }
+
+            & + .site-header .nav-toggle-button .close {
+                display: block;
+            }
+
+            & + .site-header .nav-toggle-button .open {
+                display:none;
+            }
+        }
+
+    }
+}*/

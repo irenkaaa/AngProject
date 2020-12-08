@@ -1,0 +1,30 @@
+<header>
+    <img  class='lead-picture' src="https://i.pinimg.com/originals/fe/47/0d/fe470d6a416be9f84502dc451d889bc6.jpg">
+    <span class="title">Animals</span>
+    
+        <ul>
+          <li><a routerLink=''>Home</a></li>
+          <li><a routerLink='/contact'>Contact</a></li>
+          <li><a routerLink='/about'>About</a></li>
+
+          <div *ngIf="isLoggedIn" class="inside">
+            <li><a routerLink='/add'>Add Animal</a></li>
+            <li><a routerLink='/all'>All Animals</a></li>            
+            <li><a routerLink='/profile'>Profile</a></li>
+          </div>
+          <div *ngIf="!isLoggedIn; else showThis" class="notlogged">
+            <li><a routerLink='/login'>Login</a></li>
+            <li><a routerLink='/register'>Register</a></li>
+          </div>
+
+
+        </ul>
+      
+      
+</header>
+
+<ng-template #showThis>      
+  <span>Hello, {{username}}</span>
+  <button (click)="logout()" type="button" class="btn btn-dark">Logout</button>
+</ng-template>
+

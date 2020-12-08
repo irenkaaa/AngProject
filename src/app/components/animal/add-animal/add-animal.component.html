@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="row space-top">
+    <div class="col-md-12">
+      <h1>Add Animal</h1>
+      <p>Please fill all fields.</p>
+    </div>
+  </div>
+  <form [formGroup]='form' (submit)='addAnimal()'>
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+      </div>
+      <input class="form-control" placeholder="Breed" type="text" formControlName='breed'>
+    </div>
+    <div class="alert alert-danger" *ngIf='f.breed.errors?.required && f.breed.touched'>
+      This field is required
+    </div>
+
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+      </div>
+      <input class="form-control" placeholder="Sex" type="text" formControlName='sex'>
+    </div>
+    <div class="alert alert-danger" *ngIf='f.sex.errors?.required && f.sex.touched'>
+      This field is required
+    </div>
+
+
+
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+      </div>
+      <input class="form-control" placeholder="Description" type="text" formControlName='description'>
+    </div>
+    <div class="alert alert-danger" *ngIf='f.description.errors?.required && f.description.touched'>
+      This field is required
+    </div>
+
+
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+      </div>
+      <input class="form-control" placeholder="Age" type="number" formControlName='age'>
+    </div>
+    <div class="alert alert-danger" *ngIf='f.age.errors?.required && f.age.touched'>
+      This field is required
+    </div>
+
+
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+      </div>
+      <input class="form-control" placeholder="Date" type="date" formControlName='date'>
+    </div>
+    <div class="alert alert-danger" *ngIf='f.date.errors?.required && f.date.touched'>
+      This field is required
+    </div>
+
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+      </div>
+      <input class="form-control" placeholder="Image Url" type="text" formControlName='image'>
+    </div>
+    <div class="alert alert-danger" *ngIf='f.image.errors?.required && f.image.touched'>
+      This field is required
+    </div>
+
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-block" [disabled]='form.invalid'> Add Animal </button>
+    </div>
+  </form>
+</div>
