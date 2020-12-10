@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AnimalService } from 'src/app/core/services/animal.service';
-import { AuthService } from 'src/app/core/services/auth.service';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-add-animal',
@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class AddAnimalComponent implements OnInit {
   form;
+  faAngleRight = faAngleRight;
 
   constructor(
     private fb: FormBuilder,
@@ -20,6 +21,7 @@ export class AddAnimalComponent implements OnInit {
 
   ngOnInit(){
     this.form = this.fb.group({
+      title: ['',[Validators.required]],
       breed: ['', [Validators.required]],
       sex: ['', [Validators.required]],
       description: ['', [Validators.required, Validators.minLength(10)]],

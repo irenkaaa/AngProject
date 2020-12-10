@@ -6,6 +6,11 @@ const animalSchema = new mongoose.Schema({
     required: true,
     default: 'No breed'
   },
+
+  title: {
+    type: mongoose.Schema.Types.String,
+    required: true
+  },
   sex: {
     type: mongoose.Schema.Types.String,
     required: true

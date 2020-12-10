@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Animal } from 'src/app/core/models/Animal';
+import { AnimalService } from 'src/app/core/services/animal.service';
 
 @Component({
   selector: 'app-list-animals',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListAnimalsComponent implements OnInit {
 
-  constructor() { }
+  allAnimals$: Observable<Array<Animal>>;
 
-  ngOnInit(): void {
+  constructor(private animalService: AnimalService) { }
+
+  ngOnInit() {
+    this.allAnimals$ = this.animalService.getAllAnimals();
   }
 
 }

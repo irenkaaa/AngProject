@@ -10,6 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { ContactComponent } from './components/shared/contact/contact.component';
 
 
@@ -20,6 +22,8 @@ import { AuthService } from './core/services/auth.service';
 import { AnimalService } from './core/services/animal.service';
 import { AddAnimalComponent } from './components/animal/add-animal/add-animal.component';
 import { ListAnimalsComponent } from './components/animal/list-animals/list-animals.component';
+import { SingleAnimalComponent } from './components/animal/single-animal/single-animal.component';
+import { DetailAnimalComponent } from './components/animal/detail-animal/detail-animal.component';
 
 
 @NgModule({
@@ -33,6 +37,9 @@ import { ListAnimalsComponent } from './components/animal/list-animals/list-anim
     ContactComponent,
     AddAnimalComponent,
     ListAnimalsComponent,
+    SingleAnimalComponent,
+    ContactComponent,
+    DetailAnimalComponent,
     
   ],
   imports: [
@@ -42,6 +49,7 @@ import { ListAnimalsComponent } from './components/animal/list-animals/list-anim
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
+    FontAwesomeModule,
   ],
   providers: [
     AuthService,

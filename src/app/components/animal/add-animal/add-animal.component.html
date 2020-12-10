@@ -6,11 +6,25 @@
     </div>
   </div>
   <form [formGroup]='form' (submit)='addAnimal()'>
+
+
     <div class="form-group input-group">
       <div class="input-group-prepend">
-        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+        <span class="input-group-text"> <fa-icon [icon]="faAngleRight"></fa-icon> Title </span>
       </div>
-      <input class="form-control" placeholder="Breed" type="text" formControlName='breed'>
+      <input class="form-control"  type="text" formControlName='title'>
+    </div>
+    <div class="alert alert-danger" *ngIf='f.title.errors?.required && f.title.touched'>
+      This field is required
+    </div>
+
+
+
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><fa-icon [icon]="faAngleRight"></fa-icon> Breed </span>
+      </div>
+      <input class="form-control" type="text" formControlName='breed'>
     </div>
     <div class="alert alert-danger" *ngIf='f.breed.errors?.required && f.breed.touched'>
       This field is required
@@ -18,9 +32,9 @@
 
     <div class="form-group input-group">
       <div class="input-group-prepend">
-        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+        <span class="input-group-text"><fa-icon [icon]="faAngleRight"></fa-icon> Sex </span>
       </div>
-      <input class="form-control" placeholder="Sex" type="text" formControlName='sex'>
+      <input class="form-control"  type="text" formControlName='sex'>
     </div>
     <div class="alert alert-danger" *ngIf='f.sex.errors?.required && f.sex.touched'>
       This field is required
@@ -30,9 +44,9 @@
 
     <div class="form-group input-group">
       <div class="input-group-prepend">
-        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+        <span class="input-group-text"><fa-icon [icon]="faAngleRight"></fa-icon> Description </span>
       </div>
-      <input class="form-control" placeholder="Description" type="text" formControlName='description'>
+      <input class="form-control"  type="text" formControlName='description'>
     </div>
     <div class="alert alert-danger" *ngIf='f.description.errors?.required && f.description.touched'>
       This field is required
@@ -41,9 +55,9 @@
 
     <div class="form-group input-group">
       <div class="input-group-prepend">
-        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+        <span class="input-group-text"><fa-icon [icon]="faAngleRight"></fa-icon> Age </span>
       </div>
-      <input class="form-control" placeholder="Age" type="number" formControlName='age'>
+      <input class="form-control"  type="number" formControlName='age'>
     </div>
     <div class="alert alert-danger" *ngIf='f.age.errors?.required && f.age.touched'>
       This field is required
@@ -52,9 +66,9 @@
 
     <div class="form-group input-group">
       <div class="input-group-prepend">
-        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+        <span class="input-group-text"><fa-icon [icon]="faAngleRight"></fa-icon> Date </span>
       </div>
-      <input class="form-control" placeholder="Date" type="date" formControlName='date'>
+      <input class="form-control"  type="date" formControlName='date'>
     </div>
     <div class="alert alert-danger" *ngIf='f.date.errors?.required && f.date.touched'>
       This field is required
@@ -62,9 +76,9 @@
 
     <div class="form-group input-group">
       <div class="input-group-prepend">
-        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+        <span class="input-group-text"><fa-icon [icon]="faAngleRight"></fa-icon> Image Url </span>
       </div>
-      <input class="form-control" placeholder="Image Url" type="text" formControlName='image'>
+      <input class="form-control" type="text" formControlName='image'>
     </div>
     <div class="alert alert-danger" *ngIf='f.image.errors?.required && f.image.touched'>
       This field is required

@@ -32,6 +32,10 @@ export class AnimalService {
     return this.http.get<Array<Animal>>(getAllAnimals);
   }
 
+  getDetailsAnimal(id): Observable<Animal> {
+    return this.http.get<Animal>(getAnimalDetail + id);
+  }
+
 /*
 createFurniture(data) {
     return this.http.post(createF , data);
