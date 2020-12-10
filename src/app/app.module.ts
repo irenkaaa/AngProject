@@ -40,7 +40,6 @@ import { DetailAnimalComponent } from './components/animal/detail-animal/detail-
     SingleAnimalComponent,
     ContactComponent,
     DetailAnimalComponent,
-    
   ],
   imports: [
     BrowserModule,

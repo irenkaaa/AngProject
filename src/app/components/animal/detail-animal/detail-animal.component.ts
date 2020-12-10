@@ -10,16 +10,22 @@ import { AnimalService } from 'src/app/core/services/animal.service';
 })
 export class DetailAnimalComponent implements OnInit {
   animal: Animal;
+  id: string;
+  isFound: boolean;
 
   constructor(private route: ActivatedRoute, private animalService: AnimalService) { }
 
   ngOnInit() {
     this.route.params.subscribe((data) => {
-      let id = data['id'];
-      this.animalService.getDetailsAnimal(id).subscribe((data)=> {
-        console.log(data);
+      this.id = data['id'];
+      this.animalService.getDetailsAnimal(this.id).subscribe((data)=> {
         this.animal = data;
-      })  
+        if(this.animal.title !== 'Found') {
+          this.isFound = true;
+        } else {
+          this.isFound = false;
+        }
+       })  
     })
   }
 

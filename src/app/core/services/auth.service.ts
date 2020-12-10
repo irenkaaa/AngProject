@@ -34,23 +34,8 @@ export class AuthService {
     return this.token !== null;
   }
 
-  saveUserInfo(res: Object) {
-    
+  saveUserInfo(res: Object) {    
     localStorage.setItem('username', res['user']['name']);
     localStorage.setItem('token', res['token'])
   }
 }
-
-/*
-
-
-  isAuthenticated() {
-    return localStorage.getItem('token') !== null;
-  }
-
-  getToken(){
-    let token = localStorage.getItem('token');
-    return token;
-  }
-}
-*/

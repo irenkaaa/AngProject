@@ -10,7 +10,7 @@ const getAllAnimals = 'http://localhost:5000/animal/all';
 const getAnimalDetail = 'http://localhost:5000/animal/details/';
 const getUserAnimals = 'http://localhost:5000/animal/user';
 const deleteAnimal = 'http://localhost:5000/animal/delete/';
-
+const editAnimalInfo = 'http://localhost:5000/animal/edit/';
 
 
 @Injectable({
@@ -36,14 +36,16 @@ export class AnimalService {
     return this.http.get<Animal>(getAnimalDetail + id);
   }
 
-/*
-createFurniture(data) {
-    return this.http.post(createF , data);
+  deleteAnimal(id){
+    return this.http.delete(deleteAnimal + id);
   }
 
-  getAllFurniture(): Observable<Array<Furniture>> {
-    return this.http.get<Array<Furniture>>(getAllF);
+  editAnimalInfo(id,body){
+    return this.http.put((editAnimalInfo + id), body);
   }
+
+/*
+
 
   getFurniture(id): Observable<Furniture> {
     return this.http.get<Furniture>(getFurnitureDetail + id);
@@ -52,11 +54,6 @@ createFurniture(data) {
   getUserFurniture(): Observable<Array<Furniture>> {
     return this.http.get<Array<Furniture>>(getUserF);
   }
-
-  deleteFurniture(id){
-    return this.http.delete(deleteF + id);
-  }
- 
 
 */
 }

@@ -100,6 +100,7 @@ router.get('/details/:id', authCheck, (req, res) => {
 
       let response = {
         id,
+        title: animal.title,
         breed: animal.breed,
         sex: animal.sex,
         date: animal.date,
@@ -108,9 +109,6 @@ router.get('/details/:id', authCheck, (req, res) => {
         image: animal.image,
       }
 
-     /* if (furniture.material) {
-        response.material = furniture.material
-      }*/
 
       res.status(200).json(response)
     })
@@ -206,6 +204,7 @@ router.get('/:id', authCheck, (req, res) => {
 
       let response = {
         id,
+        title: animal.title,
         breed: animal.breed,
         sex: animal.sex,
         date: animal.date,
@@ -214,10 +213,6 @@ router.get('/:id', authCheck, (req, res) => {
         image: animal.image,
       }
 
-     /* if (furniture.material) {
-        response.material = furniture.material
-      }
-*/
       res.status(200).json(response)
     })
 })

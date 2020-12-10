@@ -1,2 +1,24 @@
-<h2>{{animal.title}}</h2>
-<div class="card"></div>
+<h2>Title</h2>
+<div *ngIf='animal'> 
+    <h3>That animal is <strong>{{animal.title | uppercase}}</strong></h3>
+    <div>
+        <img src="{{animal.image}}" alt="image Unavailable">
+    </div> 
+    <div class="info">
+        <p>Sex: {{animal.sex}}</p>
+        <p>Age around: {{animal.age}}</p>
+        <p>Date when {{animal.title}}: {{animal.date | date}}</p>
+        <p>Looks like that kind of breed: {{animal.breed}}</p>
+        <p>Description: {{animal.description}}</p>
+    </div> 
+
+    <div *ngIf='isFound; else lost'>
+        <h4 >If you can help and find home for that pet, click here to contact us!</h4>
+        <button class="btn btn-info">I want that</button>
+    </div>  
+</div>
+
+<ng-template #lost>
+    <h4>If that is yours lost pet, click here and contact us immediately!</h4>
+    <button class="btn btn-info">That is my love</button>
+</ng-template>
