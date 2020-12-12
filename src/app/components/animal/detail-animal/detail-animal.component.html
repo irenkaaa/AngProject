@@ -1,6 +1,6 @@
 <h2>Title</h2>
 <div *ngIf='animal'> 
-    <h3>That animal is <strong>{{animal.title | uppercase}}</strong></h3>
+    <h3><strong>{{animal.title | uppercase}}</strong></h3>
     <div>
         <img src="{{animal.image}}" alt="image Unavailable">
     </div> 
@@ -12,13 +12,8 @@
         <p>Description: {{animal.description}}</p>
     </div> 
 
-    <div *ngIf='isFound; else lost'>
+    <div>
         <h4 >If you can help and find home for that pet, click here to contact us!</h4>
-        <button class="btn btn-info">I want that</button>
+        <button class="btn btn-info" (click)='adoptPet()'>That is my love</button>
     </div>  
 </div>
-
-<ng-template #lost>
-    <h4>If that is yours lost pet, click here and contact us immediately!</h4>
-    <button class="btn btn-info">That is my love</button>
-</ng-template>

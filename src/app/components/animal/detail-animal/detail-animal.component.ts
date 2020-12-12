@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Animal } from 'src/app/core/models/Animal';
 import { AnimalService } from 'src/app/core/services/animal.service';
 
@@ -11,22 +11,24 @@ import { AnimalService } from 'src/app/core/services/animal.service';
 export class DetailAnimalComponent implements OnInit {
   animal: Animal;
   id: string;
-  isFound: boolean;
+  
 
-  constructor(private route: ActivatedRoute, private animalService: AnimalService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private animalService: AnimalService,
+    private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe((data) => {
       this.id = data['id'];
       this.animalService.getDetailsAnimal(this.id).subscribe((data)=> {
         this.animal = data;
-        if(this.animal.title !== 'Found') {
-          this.isFound = true;
-        } else {
-          this.isFound = false;
-        }
        })  
     })
+  }
+
+  adoptPet(){
+    this.router.navigate([`animal/adopt/${this.id}`]);
   }
 
 }

@@ -31,10 +31,6 @@ const animalSchema = new mongoose.Schema({
   image: {
     type: mongoose.Schema.Types.String,
     required: true
-  },
-  creator: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
   }
 });
 

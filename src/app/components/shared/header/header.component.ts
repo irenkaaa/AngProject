@@ -1,5 +1,6 @@
-import { Component, DoCheck } from '@angular/core';
+import { Component, DoCheck, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/core/models/User';
 import { AuthService } from '../../../core/services/auth.service';
 
 @Component({

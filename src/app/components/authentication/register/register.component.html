@@ -4,31 +4,35 @@
 
       <div class="form-group input-group">
         <div class="input-group-prepend">
-          <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+          <span class="input-group-text"> Email </span>
         </div>
-        <input class="form-control" placeholder="Email Address" type="email" formControlName='email'>
+        <input class="form-control" placeholder="Enter your email here" type="email" formControlName='email'>
       </div>
       <div class="alert alert-danger" *ngIf='f.email.errors?.required && f.email.touched'>
         This field is required
+      </div>
+      <div class="alert alert-danger" *ngIf="f.email.errors?.email">
+        Email must be a valid email address
       </div>
 
 
       <div class="form-group input-group">
         <div class="input-group-prepend">
-          <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          <span class="input-group-text"> Full Name </span>
         </div>
-        <input class="form-control" placeholder="Full Name" type="text" autocomplete="on" formControlName='name'>
+        <input class="form-control" placeholder="Write your full name here" type="text" autocomplete="on" formControlName='name'>
       </div>
 
       <div class="alert alert-danger" *ngIf='f.name.errors?.required && f.name.touched'>
         This field is required
       </div>
+      <div class="alert alert-danger" *ngIf='f.name.errors?.pattern'>
+        Name should start with UpperCase and have space between (ex.: Ivan Ivanov)
+      </div>
 
-
-  
       <div class="form-group input-group">
         <div class="input-group-prepend">
-          <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          <span class="input-group-text"> Password </span>
         </div>
         <input class="form-control" placeholder="Create password" type="password" autocomplete="on" formControlName='password'>
       </div>
@@ -36,23 +40,28 @@
       <div class="alert alert-danger" *ngIf='f.password.errors?.required && f.password.touched'>
         This field is required
       </div>
-
+      <div class="alert alert-danger" *ngIf="f.password.errors?.minlength">
+        Password must be at least 6 characters
+      </div>
 
       <div class="form-group input-group">
         <div class="input-group-prepend">
-          <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          <span class="input-group-text"> Repeat password </span>
         </div>
-        <input class="form-control" placeholder="Repeat password" type="password"  autocomplete="on" formControlName='repeatPassword'>
+        <input appPasswordsValidator class="form-control" placeholder="Repeat password" type="password"  autocomplete="on" formControlName='repeatPassword'>
       </div>
 
       <div class="alert alert-danger" *ngIf='f.repeatPassword.errors?.required && f.repeatPassword.touched'>
         This field is required
       </div>
+      <div class="alert alert-danger" *ngIf="f.repeatPassword.errors?.mustMatch">
+        The Passwords must match
+      </div>
   
       <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block" [disabled]='form.invalid'> Create Account </button>
+        <button type="submit" class="btn btn-primary btn-block" > Create Account </button>
       </div>
-      <p class="text-center">Have an account? <a routerLink='/login'>Log In</a> </p>
+      <p class="text-center">Have an account? <a routerLink='/login' class="btn btn-secondary">Log In</a> </p>
     </form>
   </div>
   

@@ -18,6 +18,10 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
+  get isAdmin() {
+    return localStorage.getItem('isAdmin');
+  }
+
   register(body: Object) {
     return this.http.post(this.registerUrl, body);
   }
@@ -34,8 +38,10 @@ export class AuthService {
     return this.token !== null;
   }
 
-  saveUserInfo(res: Object) {    
+  saveUserInfo(res: Object) {
     localStorage.setItem('username', res['user']['name']);
+    localStorage.setItem('isAdmin', res['user']['isAdmin']);
     localStorage.setItem('token', res['token'])
+    
   }
 }

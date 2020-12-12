@@ -8,7 +8,9 @@ import { Animal } from '../models/Animal';
 const addAnimal = 'http://localhost:5000/animal/create';
 const getAllAnimals = 'http://localhost:5000/animal/all';
 const getAnimalDetail = 'http://localhost:5000/animal/details/';
-const getUserAnimals = 'http://localhost:5000/animal/user';
+const postAdoption = 'http://localhost:5000/animal/adoption/';
+
+
 const deleteAnimal = 'http://localhost:5000/animal/delete/';
 const editAnimalInfo = 'http://localhost:5000/animal/edit/';
 
@@ -35,6 +37,11 @@ export class AnimalService {
   getDetailsAnimal(id): Observable<Animal> {
     return this.http.get<Animal>(getAnimalDetail + id);
   }
+
+  postAdoptionForm(body) {
+    return this.http.post(postAdoption, body);
+  }
+
 
   deleteAnimal(id){
     return this.http.delete(deleteAnimal + id);

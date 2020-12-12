@@ -77,7 +77,7 @@ router.post('/create', authCheck, (req, res) => {
     })
 })
 
-router.get('/all', authCheck ,(req, res) => {
+router.get('/all' ,(req, res) => {
   const page = parseInt(req.query.page) || 1
   const search = req.query.search
 
@@ -115,14 +115,14 @@ router.get('/details/:id', authCheck, (req, res) => {
 })
 
 
-router.get('/user', authCheck, (req, res) => {
+/*router.get('/user', authCheck, (req, res) => {
   const user = req.user._id
 
   Animal.find({creator: user})
     .then((animal) => {
       return res.status(200).json(animal)
     })
-})
+})*/
 
 router.delete('/delete/:id', authCheck, (req, res) => {
   const id = req.params.id

@@ -1,10 +1,13 @@
 const mongoose = require('mongoose');
 const encryption = require('../util/encryption');
 
-const userSchema = new mongoose.Schema({
+
+const REQUIRED_VALIDATION_MESSAGE = '{PATH} is required'
+
+let userSchema = new mongoose.Schema({
   email: {
     type: mongoose.Schema.Types.String,
-    required: true,
+    required: REQUIRED_VALIDATION_MESSAGE,
     unique: true
   },
   hashedPass: {
@@ -13,7 +16,7 @@ const userSchema = new mongoose.Schema({
   },
   name: {
     type: mongoose.Schema.Types.String,
-    required: true
+    required: REQUIRED_VALIDATION_MESSAGE,
   },
   salt: {
     type: mongoose.Schema.Types.String,
@@ -21,7 +24,11 @@ const userSchema = new mongoose.Schema({
   },
   roles: [{
     type: mongoose.Schema.Types.String
-  }]
+  }],
+  adoptionRequests: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Animal'
+  }
 });
 
 userSchema.method({
@@ -30,14 +37,15 @@ userSchema.method({
   }
 });
 
-const User = mongoose.model('User', userSchema);
+
+let User = mongoose.model('User', userSchema);
 
 User.seedAdminUser = async () => {
   try {
     let users = await User.find();
-    if (users.length > 0) return;
-    const salt = encryption.generateSalt();
-    const hashedPass = encryption.generateHashedPassword(salt, 'Admin');
+    if (users.length > 0) return
+    let salt = encryption.generateSalt()
+    const hashedPass = encryption.generateHashedPassword(salt, '12345678');
     return User.create({
       name: 'Admin',
       email: 'admin@admin.com',

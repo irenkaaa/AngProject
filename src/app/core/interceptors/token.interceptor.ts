@@ -21,24 +21,10 @@ export class TokenInterceptor implements HttpInterceptor {
         });
 
         return next.handle(jsonReq).pipe(tap((event:HttpEvent<any>)=>{
-            if(event instanceof HttpResponse && req.url.endsWith('login')) {
+            if(event instanceof HttpResponse && req.url.endsWith('register')) {
                 this.toastr.success('Succesfull registration', 'Success');
                 this.authService.saveUserInfo(event.body);
             }
         }));
     }
 }
-
-
-
-/*
-
-    return next.handle(req).pipe(tap((event:HttpEvent<any>)=>{
-        if(event instanceof HttpResponse && req.url.endsWith('login')) {
-            this.toastr.success('Successfull registration', 'Success');
-            this.authService.saveUserInfo(event.body);
-        }
-    }));
-
-
-*/
