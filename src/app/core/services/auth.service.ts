@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,8 @@ export class AuthService {
   private readonly registerUrl = 'http://localhost:5000/auth/register';
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) { }
 
 
@@ -39,7 +41,7 @@ export class AuthService {
   }
 
   saveUserInfo(res: Object) {
-    localStorage.setItem('username', res['user']['name']);
+    localStorage.setItem('username', res['user']['username']);
     localStorage.setItem('isAdmin', res['user']['isAdmin']);
     localStorage.setItem('token', res['token'])
     

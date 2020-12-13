@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6), /*Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{3,16}$/)*/]],
       repeatPassword: ['', [Validators.required]],
-      name: ['',[Validators.required, Validators.pattern(/[A-Z][a-z]+\s[A-Z][a-z]+/)]],
+      username: ['',[Validators.required,Validators.minLength(3)]],
      }, {
       validator: MustMatch('password', 'repeatPassword')
   });
@@ -31,11 +31,9 @@ export class RegisterComponent implements OnInit {
 
 
   register(){
-    //this.authService.register(this.form.value).subscribe((data)=>{
-      console.log(this.form.controls.password.value)
-      console.log(this.form.controls.repeatPassword.value)
-      //this.router.navigate([ '/login' ]);
-    //})
+    this.authService.register(this.form.value).subscribe((data)=>{
+      this.router.navigate(['/home']);
+    })
   }
 
   get f(){

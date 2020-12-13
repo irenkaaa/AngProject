@@ -18,16 +18,16 @@
 
       <div class="form-group input-group">
         <div class="input-group-prepend">
-          <span class="input-group-text"> Full Name </span>
+          <span class="input-group-text"> Username </span>
         </div>
-        <input class="form-control" placeholder="Write your full name here" type="text" autocomplete="on" formControlName='name'>
+        <input class="form-control" placeholder="Write your username here" type="text" autocomplete="on" formControlName='username'>
       </div>
 
-      <div class="alert alert-danger" *ngIf='f.name.errors?.required && f.name.touched'>
+      <div class="alert alert-danger" *ngIf='f.username.errors?.required && f.username.touched'>
         This field is required
       </div>
-      <div class="alert alert-danger" *ngIf='f.name.errors?.pattern'>
-        Name should start with UpperCase and have space between (ex.: Ivan Ivanov)
+      <div class="alert alert-danger" *ngIf='f.username.errors?.minlength'>
+        Username must have at least 3 symbols
       </div>
 
       <div class="form-group input-group">

@@ -58,9 +58,5 @@ export class AnimalService {
     return this.http.get<Furniture>(getFurnitureDetail + id);
   }
 
-  getUserFurniture(): Observable<Array<Furniture>> {
-    return this.http.get<Array<Furniture>>(getUserF);
-  }
-
 */
 }

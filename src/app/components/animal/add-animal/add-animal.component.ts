@@ -34,7 +34,6 @@ export class AddAnimalComponent implements OnInit {
 
   addAnimal(){
     this.animalService.addAnimal(this.form.value).subscribe((data) => {
-      console.log(data)
       this.router.navigate(['/']);
     })
   }

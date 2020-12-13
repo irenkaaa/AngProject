@@ -4,7 +4,14 @@
   </div>
   <img style="height: 200px; width: 100%; display: block;" [src]="animal.image" alt="Card image">
   <h5>{{animal.breed}}</h5>
-  <div class="card-footer text-muted">
+  <div class="card-footer text-muted" *ngIf="!isAdmin; else Admin">
     <a class="btn btn-primary" [routerLink]="['/animal/details', animal._id]">View details</a>
   </div>
 </div>
+
+
+<ng-template #Admin>
+  <a class="btn btn-primary" [routerLink]="['/animal/edit', animal._id]">Edit animal details</a>
+  <button type='submit' class='btn btn-warning' (click)='deleteAnimal()'> Delete animal</button>
+
+</ng-template>

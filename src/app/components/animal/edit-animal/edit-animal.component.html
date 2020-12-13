@@ -1,0 +1,63 @@
+<div class="container" *ngIf='animal'>
+
+    <div class="row space-top">
+      <div class="col-md-12">
+        <h1>Edit Animal</h1>
+      </div>
+    </div>
+    <form [formGroup]='editForm' (submit)='editAnimal()'>
+  
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> Edit Title </span>
+        </div>
+        <input class="form-control"  type="text" formControlName='title' value="{{animal.title}}">
+      </div>
+  
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> Edit Breed </span>
+        </div>
+        <input class="form-control" type="text" formControlName='breed' value="{{animal.breed}}" >
+      </div>
+    
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> Edit Sex </span>
+        </div>
+        <input class="form-control"  type="text" formControlName='sex' value="{{animal.sex}}" >
+      </div>
+    
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> Edit Description </span>
+        </div>
+        <input class="form-control"  type="text" formControlName='description' value="{{animal.description}}">
+      </div>
+     
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> Edit Age </span>
+        </div>
+        <input class="form-control"  type="number" formControlName='age' value="{{animal.age}}">
+      </div>
+     
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> Edit Date </span>
+        </div>
+        <input class="form-control"  type="date" formControlName='date' value="{{animal.date}}" >
+      </div>
+  
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> Edit Image </span>
+        </div>
+        <input class="form-control" type="text" formControlName='image' value="{{animal.image}}" >
+      </div>
+  
+      <div class="form-group">
+        <button type="submit" class='btn btn-primary btn-block'> Update Info </button>
+      </div>
+    </form>
+  </div>

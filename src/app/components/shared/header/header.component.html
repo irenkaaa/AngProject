@@ -8,7 +8,7 @@
           <li><a routerLink='/about'>About</a></li>
 
           <div *ngIf="isLoggedIn" class="inside">
-            <li><a routerLink='/animal/add'>Add Animal</a></li>
+            <li><a routerLink='/animal/add' *ngIf="isAdmin">Add Animal</a></li>
             <li><a routerLink='/animal/help'>Help Animals</a></li>            
           </div>
           <div *ngIf="!isLoggedIn; else showThis" class="notlogged">
@@ -23,7 +23,7 @@
 </header>
 
 <ng-template #showThis>      
-  <span>Hello, {{username}}</span>
+  <span>Hello, {{username | uppercase}}</span>
   <button (click)="logout()" type="button" class="btn btn-dark">Logout</button>
 </ng-template>
 

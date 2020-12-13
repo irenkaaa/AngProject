@@ -19,9 +19,9 @@ function validateRegisterForm (payload) {
     errors.password = 'Password must have at least 4 characters.'
   }
 
-  if (!payload || typeof payload.name !== 'string' || payload.name.trim().length === 0) {
+  if (!payload || typeof payload.username !== 'string' || payload.username.trim().length === 0) {
     isFormValid = false
-    errors.name = 'Please provide your name.'
+    errors.username = 'Please provide your username.'
   }
 
   if (!isFormValid) {
@@ -71,7 +71,7 @@ router.post('/register', (req, res, next) => {
     })
   }
 
-  return passport.authenticate('local-register', (err) => {
+  return passport.authenticate('local-register', (err,token, userData) => {
     if (err) {
       return res.status(401).json({
         success: false,
@@ -81,7 +81,9 @@ router.post('/register', (req, res, next) => {
 
     return res.status(200).json({
       success: true,
-      message: 'You have successfully signed up! Now you should be able to log in.'
+      message: 'You have successfully signed up!',
+      token,
+      user : userData
     })
   })(req, res, next)
 })

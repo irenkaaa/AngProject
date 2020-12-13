@@ -14,7 +14,7 @@ let userSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.String,
     required: true
   },
-  name: {
+  username: {
     type: mongoose.Schema.Types.String,
     required: REQUIRED_VALIDATION_MESSAGE,
   },
@@ -47,7 +47,7 @@ User.seedAdminUser = async () => {
     let salt = encryption.generateSalt()
     const hashedPass = encryption.generateHashedPassword(salt, '12345678');
     return User.create({
-      name: 'Admin',
+      username: 'Admin',
       email: 'admin@admin.com',
       salt,
       hashedPass,

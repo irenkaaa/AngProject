@@ -1,6 +1,5 @@
 import { Component, DoCheck, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from 'src/app/core/models/User';
 import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
@@ -11,12 +10,14 @@ import { AuthService } from '../../../core/services/auth.service';
 export class HeaderComponent  implements DoCheck {
   username: string = '';
   isLoggedIn: boolean;
+  isAdmin: boolean;
 
   constructor(private authService: AuthService, private router:Router) { }
 
   ngDoCheck() {
     this.username = localStorage.getItem('username');
     this.isLoggedIn = this.authService.isAuthenticated();
+    this.isAdmin = localStorage.getItem('isAdmin') === 'true' ? true : false;
   }
 
 

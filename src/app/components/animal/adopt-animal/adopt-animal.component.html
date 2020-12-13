@@ -1,0 +1,72 @@
+
+<div class="container">
+    <div class="row space-top">
+      <div class="col-md-12">
+        <h1>Adoption Form</h1>
+        <p>Please fill out everything and correctly, so our colleaues can process your desire as fast as possible!</p>
+      </div>
+    </div>
+    <form [formGroup]='form' (submit)='adoptAnimal()'>
+        
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> Name </span>
+        </div>
+        <input class="form-control"  type="text" formControlName='name'>
+      </div>
+      <div class="alert alert-danger" *ngIf='f.name.errors?.required && f.name.touched'>
+        This field is required
+      </div>
+  
+  
+  
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">   Address </span>
+        </div>
+        <input class="form-control" type="text" formControlName='address'>
+      </div>
+      <div class="alert alert-danger" *ngIf='f.address.errors?.required && f.address.touched'>
+        This field is required
+      </div>
+  
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> Email </span>
+        </div>
+        <input class="form-control"  type="text" formControlName='email'>
+      </div>
+      <div class="alert alert-danger" *ngIf='f.email.errors?.required && f.email.touched'>
+        This field is required
+      </div>
+  
+  
+  
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">  PhoneNumber </span>
+        </div>
+        <input class="form-control"  type="text" formControlName='phoneNumber'>
+      </div>
+      <div class="alert alert-danger" *ngIf='f.phoneNumber.errors?.required && f.phoneNumber.touched'>
+        This field is required
+      </div>
+  
+  
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> BirthDate </span>
+        </div>
+        <input class="form-control"  type="number" formControlName='birthDate'>
+      </div>
+      <div class="alert alert-danger" *ngIf='f.birthDate.errors?.required && f.birthDate.touched'>
+        This field is required
+      </div>
+  
+  
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block" [disabled]='form.invalid'> Send adoption form </button>
+      </div>
+    </form>
+  </div>
+  

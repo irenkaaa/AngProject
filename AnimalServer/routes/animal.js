@@ -126,7 +126,6 @@ router.get('/details/:id', authCheck, (req, res) => {
 
 router.delete('/delete/:id', authCheck, (req, res) => {
   const id = req.params.id
-  const user = req.user._id
 
   Animal.findById(id)
     .then((animal) => {
@@ -137,7 +136,7 @@ router.delete('/delete/:id', authCheck, (req, res) => {
         })
       }
 
-      if ((animal.creator.toString() != user && !req.user.roles.includes("Admin"))) {
+      if ((!req.user.roles.includes("Admin"))) {
          return res.status(401).json({
            success: false,
            message: 'Unauthorized!'

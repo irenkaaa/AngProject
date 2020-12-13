@@ -25,7 +25,6 @@ import { ListAnimalsComponent } from './components/animal/list-animals/list-anim
 import { SingleAnimalComponent } from './components/animal/single-animal/single-animal.component';
 import { DetailAnimalComponent } from './components/animal/detail-animal/detail-animal.component';
 import { AboutComponent } from './components/about/about.component';
-import { LostAnimalComponent } from './components/animal/lost-animal/lost-animal.component';
 import { AdoptAnimalComponent } from './components/animal/adopt-animal/adopt-animal.component';
 import { EditAnimalComponent } from './components/animal/edit-animal/edit-animal.component';
 
@@ -45,7 +44,6 @@ import { EditAnimalComponent } from './components/animal/edit-animal/edit-animal
     ContactComponent,
     DetailAnimalComponent,
     AboutComponent,
-    LostAnimalComponent,
     AdoptAnimalComponent,
     EditAnimalComponent,
   ],
