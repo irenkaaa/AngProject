@@ -20,6 +20,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthService } from './core/services/auth.service';
 import { AnimalService } from './core/services/animal.service';
+import { UserService } from './core/services/user.service';
 import { AddAnimalComponent } from './components/animal/add-animal/add-animal.component';
 import { ListAnimalsComponent } from './components/animal/list-animals/list-animals.component';
 import { SingleAnimalComponent } from './components/animal/single-animal/single-animal.component';
@@ -27,6 +28,7 @@ import { DetailAnimalComponent } from './components/animal/detail-animal/detail-
 import { AboutComponent } from './components/about/about.component';
 import { AdoptAnimalComponent } from './components/animal/adopt-animal/adopt-animal.component';
 import { EditAnimalComponent } from './components/animal/edit-animal/edit-animal.component';
+import { ListUsersComponent } from './components/list-users/list-users.component';
 
 
 @NgModule({
@@ -46,6 +48,7 @@ import { EditAnimalComponent } from './components/animal/edit-animal/edit-animal
     AboutComponent,
     AdoptAnimalComponent,
     EditAnimalComponent,
+    ListUsersComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +62,7 @@ import { EditAnimalComponent } from './components/animal/edit-animal/edit-animal
   providers: [
     AuthService,
     AnimalService,
+    UserService,
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
    
   ],

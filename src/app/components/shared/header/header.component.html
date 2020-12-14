@@ -9,7 +9,8 @@
 
           <div *ngIf="isLoggedIn" class="inside">
             <li><a routerLink='/animal/add' *ngIf="isAdmin">Add Animal</a></li>
-            <li><a routerLink='/animal/help'>Help Animals</a></li>            
+            <li><a routerLink='/user/all' *ngIf="isAdmin">All Users</a></li>
+            <li><a routerLink='/animal/help' *ngIf='!isAdmin'>Help Animals</a></li>            
           </div>
           <div *ngIf="!isLoggedIn; else showThis" class="notlogged">
             <li><a routerLink='/login'>Login</a></li>
