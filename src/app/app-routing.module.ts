@@ -10,6 +10,7 @@ import { AboutComponent } from './components/about/about.component';
 import { AdoptAnimalComponent } from './components/animal/adopt-animal/adopt-animal.component';
 import { EditAnimalComponent } from './components/animal/edit-animal/edit-animal.component';
 import { ListUsersComponent } from './components/list-users/list-users.component';
+import { ListAdoptionRequestsComponent } from './components/list-adoption-requests/list-adoption-requests.component';
 
 const routes: Routes = [
   { path:'', pathMatch: 'full', component: HomeComponent },
@@ -23,7 +24,7 @@ const routes: Routes = [
   { path:'animal/adopt/:id', component: AdoptAnimalComponent },
   { path:'animal/edit/:id', component: EditAnimalComponent },
   { path:'user/all', component: ListUsersComponent },
-  { path: 'adoption-requests', component: }
+  { path: 'adoption-requests', component: ListAdoptionRequestsComponent}
 ];
 
 @NgModule({

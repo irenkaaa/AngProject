@@ -2,7 +2,6 @@ const express = require('express');
 const authCheck = require('../middleware/auth-check');
 const Animal = require('../models/Animal');
 const User = require('../models/User');
-const AdoptionReq = require('../models/AdoptionRequest');
 const AdoptionRequest = require('../models/AdoptionRequest');
 
 const router = new express.Router()
@@ -48,6 +47,14 @@ router.get('/allusers', (req,res)=>{
       return res.status(200).json(users)
     })
 })
+
+router.get('/all-adoption', (req,res)=>{
+  AdoptionRequest.find({})
+  .then((adopts)=>{
+    return res.status(200).json(adopts);
+  })
+})
+
 
 router.put('/promote/:id', authCheck, (req,res)=> {
   const id = req.params.id;
