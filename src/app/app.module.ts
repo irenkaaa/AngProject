@@ -30,6 +30,7 @@ import { AdoptAnimalComponent } from './components/animal/adopt-animal/adopt-ani
 import { EditAnimalComponent } from './components/animal/edit-animal/edit-animal.component';
 import { ListUsersComponent } from './components/list-users/list-users.component';
 import { ListAdoptionRequestsComponent } from './components/list-adoption-requests/list-adoption-requests.component';
+import { HelpAnimalComponent } from './components/help-animal/help-animal.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { ListAdoptionRequestsComponent } from './components/list-adoption-reques
     EditAnimalComponent,
     ListUsersComponent,
     ListAdoptionRequestsComponent,
+    HelpAnimalComponent,
   ],
   imports: [
     BrowserModule,

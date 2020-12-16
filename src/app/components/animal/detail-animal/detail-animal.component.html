@@ -1,19 +1,20 @@
-<h2>Title</h2>
-<div *ngIf='animal'> 
-    <h3><strong>{{animal.title | uppercase}}</strong></h3>
-    <div>
-        <img src="{{animal.image}}" alt="image Unavailable">
-    </div> 
+<div class='animal' *ngIf='animal'>
+  <h3><strong>{{animal.title | uppercase}}</strong></h3>
+  <div class="container">
+    <div class="media">
+      <img src="{{animal.image}}" alt="image Unavailable">
+    </div>
     <div class="info">
-        <p>Sex: {{animal.sex}}</p>
-        <p>Age around: {{animal.age}}</p>
-        <p>Date when {{animal.title}}: {{animal.date | date}}</p>
-        <p>Looks like that kind of breed: {{animal.breed}}</p>
-        <p>Description: {{animal.description}}</p>
-    </div> 
+      <p>Sex: {{animal.sex}}</p>
+      <p>Age ~ {{animal.age}}</p>
+      <p>Date when {{animal.title}} is added: {{animal.date | date}}</p>
+      <p>Looks like: {{animal.breed}}</p>
+      <p>Description: {{animal.description}}</p>
+    </div>
 
-    <div>
-        <h4 >If you can help and find home for that pet, click here to contact us!</h4>
-        <button class="btn btn-info" (click)='adoptPet(animal._id)'>That is my love</button>
-    </div>  
+    <div class="last">
+      <h5>If you can help and find home for that pet, click here to fill the Adoption form!</h5>
+      <button class="but" (click)='adoptPet(animal._id)'>That's my love</button>
+    </div>
+  </div>
 </div>

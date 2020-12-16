@@ -11,6 +11,7 @@ import { AdoptAnimalComponent } from './components/animal/adopt-animal/adopt-ani
 import { EditAnimalComponent } from './components/animal/edit-animal/edit-animal.component';
 import { ListUsersComponent } from './components/list-users/list-users.component';
 import { ListAdoptionRequestsComponent } from './components/list-adoption-requests/list-adoption-requests.component';
+import { HelpAnimalComponent } from './components/help-animal/help-animal.component';
 
 const routes: Routes = [
   { path:'', pathMatch: 'full', component: HomeComponent },
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path:'animal/adopt/:id', component: AdoptAnimalComponent },
   { path:'animal/edit/:id', component: EditAnimalComponent },
   { path:'user/all', component: ListUsersComponent },
-  { path: 'adoption-requests', component: ListAdoptionRequestsComponent}
+  { path: 'adoption-requests', component: ListAdoptionRequestsComponent},
+  { path: 'animal/help', component: HelpAnimalComponent },
 ];
 
 @NgModule({
