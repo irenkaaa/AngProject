@@ -22,7 +22,8 @@ module.exports = new PassportLocalStrategy({
     const isAdmin = newUser.roles.indexOf('Admin') != -1;
     const data = {
       username: newUser.username,
-      isAdmin
+      isAdmin,
+      id: newUser.id
     }
 
     return done(null, token, data)

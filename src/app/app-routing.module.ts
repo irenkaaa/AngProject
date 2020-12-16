@@ -23,6 +23,7 @@ const routes: Routes = [
   { path:'animal/adopt/:id', component: AdoptAnimalComponent },
   { path:'animal/edit/:id', component: EditAnimalComponent },
   { path:'user/all', component: ListUsersComponent },
+  { path: 'adoption-requests', component: }
 ];
 
 @NgModule({

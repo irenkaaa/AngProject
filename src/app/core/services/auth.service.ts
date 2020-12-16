@@ -43,6 +43,7 @@ export class AuthService {
   saveUserInfo(res: Object) {
     localStorage.setItem('username', res['user']['username']);
     localStorage.setItem('isAdmin', res['user']['isAdmin']);
+    localStorage.setItem('id', res['user']['id']);
     localStorage.setItem('token', res['token'])
     
   }

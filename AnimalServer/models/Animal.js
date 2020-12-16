@@ -31,6 +31,10 @@ const animalSchema = new mongoose.Schema({
   image: {
     type: mongoose.Schema.Types.String,
     required: true
+  },
+  adoptionRequests: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
   }
 });
 

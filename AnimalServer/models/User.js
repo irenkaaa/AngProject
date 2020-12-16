@@ -24,11 +24,7 @@ let userSchema = new mongoose.Schema({
   },
   roles: [{
     type: mongoose.Schema.Types.String
-  }],
-  adoptionRequests: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Animal'
-  }
+  }]
 });
 
 userSchema.method({

@@ -8,9 +8,7 @@ import { Animal } from '../models/Animal';
 const addAnimal = 'http://localhost:5000/animal/create';
 const getAllAnimals = 'http://localhost:5000/animal/all';
 const getAnimalDetail = 'http://localhost:5000/animal/details/';
-const postAdoption = 'http://localhost:5000/animal/adoption/';
-
-
+const postAdoption = 'http://localhost:5000/stats/create-adoption/';
 const deleteAnimal = 'http://localhost:5000/animal/delete/';
 const editAnimalInfo = 'http://localhost:5000/animal/edit/';
 

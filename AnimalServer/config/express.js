@@ -5,7 +5,7 @@ const localRegisterStrategy = require('../passport/local-register')
 const localLoginStrategy = require('../passport/local-login')
 const authRoutes = require('../routes/auth')
 const animalRoutes = require('../routes/animal')
-const statsRoutes = require('../routes/stats')
+const userAndAdoptionRoutes = require('../routes/userAndAdoption')
 
 module.exports = app => {
   app.use(bodyParser.urlencoded({
@@ -23,5 +23,5 @@ module.exports = app => {
   // routes
   app.use('/auth', authRoutes)
   app.use('/animal', animalRoutes)
-  app.use('/stats', statsRoutes)
+  app.use('/stats', userAndAdoptionRoutes)
 }
