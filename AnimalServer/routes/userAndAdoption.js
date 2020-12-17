@@ -120,7 +120,6 @@ router.delete('/delete/:id', authCheck, (req,res)=> {
 })
 
 router.post('/create-adoption', authCheck, (req, res) => {
-  console.log(req.body)
   const adoptionReq = req.body
   adoptionReq.userId = req.user._id;
   
@@ -137,7 +136,7 @@ router.post('/create-adoption', authCheck, (req, res) => {
     .then(() => {
       res.status(200).json({
         success: true,
-        message: 'Adoption request created successfully.',
+        message: 'Adoption request sent successfully.',
         adoptionReq
       })
     })
@@ -150,7 +149,7 @@ function validateAdoptionForm (payload) {
 
   if (!payload || typeof payload.fullName !== 'string') {
     isFormValid = false
-    errors.fullName = "You should write Valid full name"
+    errors.fullName = "Write valid full name"
   }
 
   if (!payload || typeof payload.address !== 'string') {
@@ -171,12 +170,12 @@ function validateAdoptionForm (payload) {
 
   if (!payload /*|| typeof payload.birthDate !== 'date' */) {
     isFormValid = false
-    errors.birthDate = 'Birth Date must be valid and user must be above 18.'
+    errors.birthDate = 'User must be above 18.'
   }
 
   if (!payload || typeof payload.animalId !== 'string') {
     isFormValid = false
-    errors.animalId = 'Animal id is missin or invalid'
+    errors.animalId = 'Animal id is missing or invalid'
   }
 
   if (!isFormValid) {

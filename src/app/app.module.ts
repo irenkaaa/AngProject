@@ -16,6 +16,8 @@ import { ContactComponent } from './components/shared/contact/contact.component'
 
 
 import { TokenInterceptor } from './core/interceptors/token.interceptor';
+import { ErrorInterceptor } from './core/interceptors/error.interceptor';
+import { SuccessInterceptor } from './core/interceptors/success.interceptor';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthService } from './core/services/auth.service';
@@ -68,7 +70,8 @@ import { HelpAnimalComponent } from './components/help-animal/help-animal.compon
     AnimalService,
     UserService,
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
-   
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: SuccessInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })

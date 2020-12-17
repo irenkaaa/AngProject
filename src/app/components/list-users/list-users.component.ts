@@ -28,7 +28,7 @@ export class ListUsersComponent implements OnInit {
   promoteToAdmin(userId){
     const body = { isAdmin: true }
     this.userService.promoteUserToAdmin(userId, body).subscribe((data) => {
-      console.log(data);
+      this.users$ = this.userService.getAllUsers();
       this.router.navigate(['/user/all']);
     });
   }

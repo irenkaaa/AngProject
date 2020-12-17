@@ -30,7 +30,7 @@ export class AddAnimalComponent implements OnInit {
       breed: ['', [Validators.required]],
       sex: ['', [Validators.required]],
       description: ['', [Validators.required, Validators.minLength(10)]],
-      age: ['', [Validators.required]], //Validators.min(0)]],
+      age: ['', [Validators.required]],
       date: [this.today, []],
       image: ['', [Validators.required]],
     })

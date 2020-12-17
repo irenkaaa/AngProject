@@ -53,7 +53,6 @@ export class AdoptAnimalComponent implements OnInit {
   adoptAnimal(){
 
     this.animalService.postAdoptionForm(this.form.value).subscribe((data) => {
-      console.log(data)
       this.router.navigate(['/']);
     })
   }
