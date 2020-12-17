@@ -19,4 +19,7 @@ export class ListAdoptionRequestsComponent implements OnInit {
     this.adoptionReq$ = this.animalService.getAllAdoptionReq();
   }
 
+  load(){
+
+  }
 }

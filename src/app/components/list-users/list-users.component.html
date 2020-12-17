@@ -1,4 +1,4 @@
-<h1>All Users</h1>
+<h2>All Users</h2>
 <div class="row">
     <div class="col-lg-4" *ngFor="let user of users$ | async">
         <div class="card" style="width: 18rem;">
@@ -6,7 +6,7 @@
               <h5 class="card-title">{{user.username}}</h5>
               <h6 class="card-subtitle mb-2 text-muted">{{user.email}}</h6>
               <p class="card-text" *ngIf="user.roles.length">That user is Admin</p>
-              <div *ngIf="!user.roles.length">
+              <div class="buttons" *ngIf="!user.roles.length">
                 <button class="btn btn-success" (click)='promoteToAdmin(user._id)'>Promote to Admin</button>
                 <button class="btn btn-danger" (click)='deleteUser(user._id)'>Delete User</button>
               </div>

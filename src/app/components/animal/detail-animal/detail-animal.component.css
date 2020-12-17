@@ -1,3 +1,4 @@
+
 .animal {
   display: flex;
   flex-direction: column;
@@ -42,13 +43,3 @@
   border-radius: 0.5em;
 }
 
-/*
-div h3{}
-div div 1{}
-div div img{}
-.info{}
-.info p{}
-div div 3{}
-div div 3 h4{}
-div div 3 button{}
-*/

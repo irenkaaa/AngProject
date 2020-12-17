@@ -12,6 +12,7 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 export class AddAnimalComponent implements OnInit {
   form;
   faAngleRight = faAngleRight;
+  today;
 
   constructor(
     private fb: FormBuilder,
@@ -20,15 +21,19 @@ export class AddAnimalComponent implements OnInit {
   ) { }
 
   ngOnInit(){
+
+    this.today = new Date().toISOString().slice(0,10)
     this.form = this.fb.group({
       title: ['',[Validators.required]],
       breed: ['', [Validators.required]],
       sex: ['', [Validators.required]],
       description: ['', [Validators.required, Validators.minLength(10)]],
       age: ['', [Validators.required, Validators.min(0)]],
-      date: ['', [Validators.required]],
+      date: [this.today, []],
       image: ['', [Validators.required]],
     })
+
+    console.log((new Date()).toJSON().slice(0,10))
   }
 
 

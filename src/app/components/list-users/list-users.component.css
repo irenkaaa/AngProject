@@ -1,0 +1,21 @@
+h2 {
+    text-align: center;
+}
+
+.row {
+    margin: 2em auto;
+    padding: 0 2em;
+}
+
+.buttons {
+    display: flex;
+    margin-bottom: 0.3em;
+}
+
+.buttons button {
+    padding: 0.3em 0.5em;
+}
+
+.buttons button:first-child {
+    margin-right: 0.2em;
+}

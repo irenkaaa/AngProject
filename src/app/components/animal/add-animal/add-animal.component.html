@@ -34,7 +34,16 @@
       <div class="input-group-prepend">
         <span class="input-group-text"><fa-icon [icon]="faAngleRight"></fa-icon> Sex </span>
       </div>
-      <input class="form-control"  type="text" formControlName='sex'>
+      <!-- <input class="form-control"  type="text" formControlName='sex'> -->
+
+      <div class="form-check form-check-inline">
+        <label class="form-check-label">Female</label>
+        <input class="form-check-input" type="radio" value="Female" formControlName='sex'>
+      </div>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label">Male</label>
+        <input class="form-check-input" type="radio" value="Male" formControlName='sex'>
+      </div>
     </div>
     <div class="alert alert-danger" *ngIf='f.sex.errors?.required && f.sex.touched'>
       This field is required
@@ -68,11 +77,9 @@
       <div class="input-group-prepend">
         <span class="input-group-text"><fa-icon [icon]="faAngleRight"></fa-icon> Date </span>
       </div>
-      <input class="form-control"  type="date" formControlName='date'>
+      <input class="form-control"  type="date" formControlName='date' readonly >
     </div>
-    <div class="alert alert-danger" *ngIf='f.date.errors?.required && f.date.touched'>
-      This field is required
-    </div>
+    
 
     <div class="form-group input-group">
       <div class="input-group-prepend">

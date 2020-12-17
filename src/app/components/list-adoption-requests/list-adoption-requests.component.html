@@ -1,9 +1,15 @@
 
-<h1>Adoption Requests</h1>
+<h2>Adoption Requests</h2>
 <div class="row">
     <div class="col-lg-2" *ngFor="let adopts of adoptionReq$ | async">
-        <p>{{adopts._id}}</p>
-        <span>{{adopts.fullName}}</span>
-
+        <div class="card border-dark mb-3" style="max-width: 18rem;">
+            <div class="card-header">Adoption request from <strong>{{adopts.fullName}}</strong></div>
+            <div class="card-body text-dark">
+              <p class="card-text">{{adopts.email}}</p>
+              <button type="button" class="btn btn-secondary" (click)='load()'>Load more...</button>
+              <!-- <h5 class="card-title">User ID: {{adopts.userId}}</h5>
+              <h5 class="card-title">Animal ID: {{adopts.animalId}}</h5> -->
+            </div>
+        </div>
     </div>
 </div>

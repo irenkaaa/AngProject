@@ -3,7 +3,6 @@
     <p class="card-text">{{animal.title}}</p>
   </div>
   <img style="height: 200px; width: 100%; display: block;" [src]="animal.image" alt="Card image">
-  <h5>{{animal.breed}}</h5>
   <div class="card-footer text-muted" *ngIf="!isAdmin; else Admin">
     <a class="btn btn-primary" [routerLink]="['/animal/details', animal._id]">View details</a>
   </div>
