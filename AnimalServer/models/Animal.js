@@ -16,7 +16,7 @@ const animalSchema = new mongoose.Schema({
     required: true
   },
   age: {
-    type: mongoose.Schema.Types.Number,
+    type: mongoose.Schema.Types.String,
     required: false
   },
   date: {

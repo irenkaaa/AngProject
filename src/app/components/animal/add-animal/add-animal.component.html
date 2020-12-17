@@ -66,7 +66,10 @@
       <div class="input-group-prepend">
         <span class="input-group-text"><fa-icon [icon]="faAngleRight"></fa-icon> Age </span>
       </div>
-      <input class="form-control"  type="number" formControlName='age'>
+      <select class="custom-select" style="max-width: 120px;" formControlName="age">
+        <option *ngFor='let age of ages'  >{{age}}</option>
+      </select>
+      <!-- <input class="form-control"  type="number" formControlName='age'> -->
     </div>
     <div class="alert alert-danger" *ngIf='f.age.errors?.required && f.age.touched'>
       This field is required

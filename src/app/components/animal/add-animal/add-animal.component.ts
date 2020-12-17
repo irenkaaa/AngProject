@@ -13,6 +13,8 @@ export class AddAnimalComponent implements OnInit {
   form;
   faAngleRight = faAngleRight;
   today;
+  ages: Array<string> = [' less than 1 year','1', '1-2','2', '2-3','3', '3-4','4', '4-5','5', '5-6','6','older'];
+  
 
   constructor(
     private fb: FormBuilder,
@@ -28,12 +30,10 @@ export class AddAnimalComponent implements OnInit {
       breed: ['', [Validators.required]],
       sex: ['', [Validators.required]],
       description: ['', [Validators.required, Validators.minLength(10)]],
-      age: ['', [Validators.required, Validators.min(0)]],
+      age: ['', [Validators.required]], //Validators.min(0)]],
       date: [this.today, []],
       image: ['', [Validators.required]],
     })
-
-    console.log((new Date()).toJSON().slice(0,10))
   }
 
 

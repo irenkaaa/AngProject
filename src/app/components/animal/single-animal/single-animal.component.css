@@ -4,4 +4,15 @@ img {
 
 .card-text {
     text-align: center;
+    text-decoration: underline;
+    font-size: 1.3em;
+}
+
+.card.mb-3{
+    border-color: darkslategrey;
+    border-width: 0.1em;
+}
+
+.card-footer.text-center {
+    margin: 0.3em 0 ;
 }

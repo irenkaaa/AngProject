@@ -10,7 +10,7 @@ function validateAnimalForm (payload) {
   let message = ''
 
  
-  payload.age = parseInt(payload.age)
+ // payload.age = parseInt(payload.age)
   
 
   if (!payload || typeof payload.breed !== 'string') {
@@ -29,9 +29,9 @@ function validateAnimalForm (payload) {
   }
 
   
-  if (!payload || typeof payload.age !== 'number' || payload.age.length > 3 || payload.age < 0) {
+  if (!payload || typeof payload.age !== 'string'/* || payload.age.length > 3 || payload.age < 0*/) {
     isFormValid = false
-    errors.age = 'Age format is number'
+    errors.age = 'Age format is wrong'
   }
 
   if (!payload || typeof payload.description !== 'string' || payload.description.length < 10) {
