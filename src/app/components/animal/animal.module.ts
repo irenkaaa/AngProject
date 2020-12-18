@@ -12,7 +12,7 @@ import { ListAnimalsComponent } from './list-animals/list-animals.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
-
+import { AnimalRoutingModule } from './animal-routing.module';
 
 
 @NgModule({
@@ -29,6 +29,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     ReactiveFormsModule,
     RouterModule,
+    AnimalRoutingModule
   ]
 })
 export class AnimalModule { }

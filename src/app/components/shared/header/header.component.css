@@ -73,6 +73,12 @@ span {
       border-radius: 0.3em;
       background: wheat;
   }
+
+  a.title {
+      background: rgb(233, 215, 215);
+      padding: 0 0.4em;
+      color: rgb(129, 7, 68);
+  }
   
 
 /*
