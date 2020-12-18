@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AnimalService } from 'src/app/core/services/animal.service';
-import { AdoptionRequest } from '../../core/models/AdoptionReq';
+import { AdoptionRequest } from '../../../core/models/AdoptionReq';
 
 @Component({
   selector: 'app-list-adoption-requests',

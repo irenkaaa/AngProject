@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AnimalService } from 'src/app/core/services/animal.service';
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-add-animal',
@@ -11,7 +10,6 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 })
 export class AddAnimalComponent implements OnInit {
   form;
-  faAngleRight = faAngleRight;
   today;
   ages: Array<string> = [' less than 1 year','1', '1-2','2', '2-3','3', '3-4','4', '4-5','5', '5-6','6','older'];
   

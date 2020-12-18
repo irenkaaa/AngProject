@@ -7,32 +7,21 @@ import { } from 'rxjs';
 
 @Injectable()
 export class SuccessInterceptor implements HttpInterceptor {
-    constructor(private router: Router, private toastr: ToastrService) { }
+  constructor(private router: Router, private toastr: ToastrService) { }
 
-    intercept(req: HttpRequest<any>, next: HttpHandler) {
-        return next.handle(req).pipe(tap((success)=>{
+  intercept(req: HttpRequest<any>, next: HttpHandler) {
+    return next.handle(req).pipe(tap((success) => {
 
-            if(success instanceof HttpResponse){
-              if(success.url.startsWith('login') || success.url.startsWith('register') || success.url.startsWith('create') || success.url.includes('delete')
-              || success.url.includes('promote') || success.url.includes('adopt')) {
-                this.toastr.success(success.body.message,'Success');
-              }
-            }
-          }), catchError((err)=> {
-            this.toastr.error(err.error.message, 'Error');
-            throw err;      
-          }) 
-        )}    
+      if (success instanceof HttpResponse) {
+        if (success.url.startsWith('login') || success.url.startsWith('register') || success.url.startsWith('create') || success.url.includes('delete')
+          || success.url.includes('promote') || success.url.includes('animal/adopt')) {
+          this.toastr.success(success.body.message, 'Success');
+        }
       }
-      
-            
-            
-            
-            /*tap((event: HttpResponse<any>) => {
-            if (event instanceof HttpResponse && (event.status === 201 || event.status === 200) && ()) {
-                this.toastr.success(event.body.message, 'Success');
-            }
-
-        }))
-    }
-}*/
+    }), catchError((err) => {
+      this.toastr.error(err.error.message, 'Error');
+      throw err;
+    })
+    )
+  }
+}

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UserService } from 'src/app/core/services/user.service';
-import { User } from '../../core/models/User';
+import { User } from '../../../core/models/User';
 
 @Component({
   selector: 'app-list-users',
