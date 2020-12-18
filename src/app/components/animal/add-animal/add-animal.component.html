@@ -93,6 +93,9 @@
     <div class="alert alert-danger" *ngIf='f.image.errors?.required && f.image.touched'>
       This field is required
     </div>
+    <div class="alert alert-danger" *ngIf='f.image.errors?.pattern'>
+      Url must start with one of the following: http,https,ftp,www
+    </div>
 
 
     <div class="form-group">

@@ -13,6 +13,9 @@ import { ListUsersComponent } from './components/list-users/list-users.component
 import { ListAdoptionRequestsComponent } from './components/list-adoption-requests/list-adoption-requests.component';
 import { HelpAnimalComponent } from './components/help-animal/help-animal.component';
 
+import { AuthGuard } from './core/guards/auth.guard';
+import { AdminGuard } from './core/guards/admin.guard';
+
 const routes: Routes = [
   { path:'', pathMatch: 'full', component: HomeComponent },
   { path:'home', component: HomeComponent },
@@ -20,12 +23,12 @@ const routes: Routes = [
   { path:'login', component: LoginComponent },
   { path:'contact', component: ContactComponent },
   { path:'about', component: AboutComponent },
-  { path:'animal/add', component: AddAnimalComponent },
-  { path:'animal/details/:id', component: DetailAnimalComponent },
-  { path:'animal/adopt/:id', component: AdoptAnimalComponent },
-  { path:'animal/edit/:id', component: EditAnimalComponent },
-  { path:'user/all', component: ListUsersComponent },
-  { path: 'adoption-requests', component: ListAdoptionRequestsComponent},
+  { path:'animal/add', component: AddAnimalComponent, canActivate: [AdminGuard] },
+  { path:'animal/details/:id', component: DetailAnimalComponent, canActivate: [AuthGuard] },
+  { path:'animal/adopt/:id', component: AdoptAnimalComponent, canActivate: [AuthGuard] },
+  { path:'animal/edit/:id', component: EditAnimalComponent, canActivate: [AdminGuard] },
+  { path:'user/all', component: ListUsersComponent , canActivate: [AdminGuard]},
+  { path: 'adoption-requests', component: ListAdoptionRequestsComponent,  canActivate: [AdminGuard]},
   { path: 'animal/help', component: HelpAnimalComponent },
 ];
 

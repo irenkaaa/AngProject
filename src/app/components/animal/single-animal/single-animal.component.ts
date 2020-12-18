@@ -1,5 +1,6 @@
 import { Component, DoCheck, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable, Subject } from 'rxjs';
 import { Animal } from 'src/app/core/models/Animal';
 import { AnimalService } from 'src/app/core/services/animal.service';
 
@@ -12,6 +13,8 @@ export class SingleAnimalComponent implements DoCheck {
   @Input("animal")
   animal: Animal;
   isAdmin: boolean;
+  //allAnimals$: Observable<Array<Animal>>;
+  //subject = new Subject<any>();
 
   constructor(
     private animalService:AnimalService,
@@ -25,7 +28,8 @@ export class SingleAnimalComponent implements DoCheck {
   deleteAnimal(){
     this.animalService.deleteAnimal(this.animal._id)
     .subscribe((data) => {
-      console.log(data)
+      console.log(data);
+      //this.allAnimals$ = this.animalService.getAllAnimals();
       this.router.navigate(['/']);
     })
   }

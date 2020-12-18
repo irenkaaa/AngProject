@@ -32,7 +32,7 @@ export class AddAnimalComponent implements OnInit {
       description: ['', [Validators.required, Validators.minLength(10)]],
       age: ['', [Validators.required]],
       date: [this.today, []],
-      image: ['', [Validators.required]],
+      image: ['', [Validators.required, Validators.pattern(/^(http|ftp|https|www)/)]],
     })
   }
 

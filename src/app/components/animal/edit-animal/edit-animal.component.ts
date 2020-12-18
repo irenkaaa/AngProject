@@ -45,9 +45,7 @@ export class EditAnimalComponent implements OnInit {
 
   editAnimal(){
     const body = this.editForm.value;
-    console.log(body)
     this.animalService.editAnimalInfo(this.id,body).subscribe((data) => {
-      console.log(data);
       this.router.navigate(['/']);
     })
   }
