@@ -1,3 +1,27 @@
+University: SoftUni
+
+Course: Angular Fundamentals 2019
+
+Student: irenkaaa
+
+
+## Project idea 
+
+Animal adoption site.
+
+Not logged in user - just can see all the animals and non-functional components
+Logged in user - can see the details of the animals and send adoption requests
+Logged in admin - can add, edit, delete animals; make users admins and delete users; checks the adoption requests
+
+
+Implemented authentication and admin guards; jwt, success and error interceptors
+
+Website data base is connected to Express Server
+Used bootstrap and custom css
+
+
+
+
 # AngProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
@@ -14,13 +38,6 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Further help
 
