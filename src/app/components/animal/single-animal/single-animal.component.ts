@@ -13,8 +13,6 @@ export class SingleAnimalComponent implements DoCheck {
   @Input("animal")
   animal: Animal;
   isAdmin: boolean;
-  //allAnimals$: Observable<Array<Animal>>;
-  //subject = new Subject<any>();
 
   constructor(
     private animalService:AnimalService,
@@ -25,14 +23,6 @@ export class SingleAnimalComponent implements DoCheck {
     this.isAdmin = localStorage.getItem('isAdmin') === 'true' ? true : false;
   }
 
-  deleteAnimal(){
-    this.animalService.deleteAnimal(this.animal._id)
-    .subscribe((data) => {
-      console.log(data);
-      //this.allAnimals$ = this.animalService.getAllAnimals();
-      this.router.navigate(['/']);
-    })
-  }
 
 }
 

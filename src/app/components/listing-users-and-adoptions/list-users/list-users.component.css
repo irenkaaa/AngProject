@@ -19,3 +19,21 @@ h2 {
 .buttons button:first-child {
     margin-right: 0.2em;
 }
+
+/*
+  @media(min-width: 600px) {
+    .row { 
+        display: flex;
+    }
+    .col-lg-4 {
+    
+    }
+}/*
+
+@media(min-width: 1024px) {
+    
+}
+
+@media(min-width: 1600px) {
+    
+*/

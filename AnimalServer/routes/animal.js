@@ -4,14 +4,14 @@ const Animal = require('../models/Animal');
 
 const router = new express.Router()
 
-function validateAnimalForm (payload) {
+function validateAnimalForm(payload) {
   const errors = {}
   let isFormValid = true
   let message = ''
 
- 
- // payload.age = parseInt(payload.age)
-  
+
+  // payload.age = parseInt(payload.age)
+
 
   if (!payload || typeof payload.breed !== 'string') {
     isFormValid = false
@@ -28,7 +28,7 @@ function validateAnimalForm (payload) {
     errors.date = 'Date must be correct.'
   }
 
-  
+
   if (!payload || typeof payload.age !== 'string'/* || payload.age.length > 3 || payload.age < 0*/) {
     isFormValid = false
     errors.age = 'Age format is wrong'
@@ -77,7 +77,7 @@ router.post('/create', authCheck, (req, res) => {
     })
 })
 
-router.get('/all' ,(req, res) => {
+router.get('/all', (req, res) => {
   const page = parseInt(req.query.page) || 1
   const search = req.query.search
 
@@ -137,10 +137,10 @@ router.delete('/delete/:id', authCheck, (req, res) => {
       }
 
       if ((!req.user.roles.includes("Admin"))) {
-         return res.status(401).json({
-           success: false,
-           message: 'Unauthorized!'
-         })
+        return res.status(401).json({
+          success: false,
+          message: 'Unauthorized!'
+        })
       }
 
       Animal.findByIdAndDelete(id)
@@ -152,6 +152,7 @@ router.delete('/delete/:id', authCheck, (req, res) => {
         })
     })
 })
+
 
 router.put('/edit/:id', authCheck, (req, res) => {
   const id = req.params.id;
@@ -186,7 +187,7 @@ router.put('/edit/:id', authCheck, (req, res) => {
         success: true,
         message: 'Animal edited successfully!'
       })
-  })
+    })
 })
 
 router.get('/:id', authCheck, (req, res) => {

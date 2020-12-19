@@ -57,6 +57,10 @@ export class AdoptAnimalComponent implements OnInit {
     })
   }
 
+  back() {
+    this.router.navigate(['/']);
+  }
+
   get f(){
     return this.form.controls;
   }

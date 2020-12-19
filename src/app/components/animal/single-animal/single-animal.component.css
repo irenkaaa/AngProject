@@ -16,3 +16,7 @@ img {
 .card-footer.text-center {
     margin: 0.3em 0 ;
 }
+
+.btn.btn-primary {
+    margin: 0.5em;
+}

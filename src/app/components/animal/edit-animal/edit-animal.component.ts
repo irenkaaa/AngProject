@@ -50,5 +50,18 @@ export class EditAnimalComponent implements OnInit {
     })
   }
 
+  deleteAnimal(){
+    this.animalService.deleteAnimal(this.id)
+    .subscribe((data) => {
+      if(data['success']) {
+      this.router.navigate(['/']); 
+    }
+    })
+  }
+
+  back() {
+    this.router.navigate(['/']);
+  }
+
 }
 
