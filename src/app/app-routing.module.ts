@@ -8,6 +8,7 @@ import { AboutComponent } from './components/dumbComponents/about/about.componen
 import { ListUsersComponent } from './components/listing-users-and-adoptions/list-users/list-users.component';
 import { ListAdoptionRequestsComponent } from './components/listing-users-and-adoptions/list-adoption-requests/list-adoption-requests.component';
 import { AdminGuard } from './core/guards/admin.guard';
+import { NotFoundComponent } from './components/dumbComponents/not-found/not-found.component';
 
 const routes: Routes = [
   { path:'', pathMatch: 'full', component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'animal', loadChildren: './components/animal/animal-routing.module#AnimalRoutingModule' },
   { path:'user/all', component: ListUsersComponent , canActivate: [AdminGuard]},
   { path: 'adoption-requests', component: ListAdoptionRequestsComponent,  canActivate: [AdminGuard]},
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
